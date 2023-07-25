@@ -1,0 +1,6 @@
+.idea/
+my-parking/dataset/
+images/
+videos/
+barrier-video/
+yolov8n.pt
