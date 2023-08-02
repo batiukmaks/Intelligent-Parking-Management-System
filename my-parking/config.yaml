@@ -1,7 +1,7 @@
-path:  /home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/dataset
-train: /home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/dataset/train
-test: /home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/dataset/test
-val: /home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/dataset/valid
+path:  /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/my-parking/dataset
+train: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/my-parking/dataset/train
+test: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/my-parking/dataset/test
+val: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/my-parking/dataset/valid
 
 #Classes
 nc: 5 # replace according to your number of classes
