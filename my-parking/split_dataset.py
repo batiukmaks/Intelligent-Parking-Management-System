@@ -3,9 +3,9 @@ import random
 import shutil
 
 # Set the paths to your image and label folders and the destination folders for splits
-root_folder = "./images"
-image_folder = "./images/raw-data"
-label_folder = "./images/labels"
+root_folder = "./annotated-data"
+image_folder = "./annotated-data/raw-data"
+label_folder = "./annotated-data/labels"
 train_dest = "./dataset/train"
 val_dest = "./dataset/valid"
 test_dest = "./dataset/test"

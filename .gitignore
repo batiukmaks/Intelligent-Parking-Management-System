@@ -1,6 +1,5 @@
 .idea/
-my-parking/dataset/
-images/
 videos/
+annotated-data/
 barrier-video/
 yolov8n.pt

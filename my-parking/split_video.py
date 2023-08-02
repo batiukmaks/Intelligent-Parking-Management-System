@@ -27,7 +27,7 @@ def split_video_to_frames(video_path, output_dir, frame_interval=1):
 
 if __name__ == "__main__":
     video_directory = "/home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/videos/car-parked"
-    output_directory = "/home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/images/raw-data/car-parked"
+    output_directory = "/home/batiukmaks/Documents/Intelligent-Parking-Management-System/my-parking/annotated-data/raw-data/car-parked"
     frame_interval = 3  # Change this to extract frames at different intervals if needed
 
     if not os.path.exists(output_directory):
