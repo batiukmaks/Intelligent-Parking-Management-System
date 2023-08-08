@@ -4,8 +4,7 @@ test: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/de
 val: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/default-dataset/valid
 
 #Classes
-nc: 5 # replace according to your number of classes
+nc: 5
 
 #classes names
-#replace all class names list with your classes names
 names: ["barrier up", "car parked", "car in", "barrier down", "car out"]
