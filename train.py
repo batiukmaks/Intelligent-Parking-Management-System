@@ -41,17 +41,28 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train a YOLO object detection model.")
 
     # Add arguments with default values
-    parser.add_argument("--model_path", type=str, default="yolov8n.pt", help="Path to the pre-trained model.")
-    parser.add_argument("--data", type=str, default="default-config.yaml", help="Data configuration for training.")
+    parser.add_argument("--model_path", type=str, default="yolov8n.pt",
+                        help="Path to the pre-trained model.")
+    parser.add_argument("--data", type=str, default="default-config.yaml",
+                        help="Data configuration for training.")
     parser.add_argument("--epochs", type=int, default=3, help="Number of epochs for training.")
     parser.add_argument("--device", type=str, default=utils.get_default_device(),
-                        help="Device for training (e.g., 'cuda', 'cpu', 'mps').")
-    parser.add_argument("--workers", type=int, default=4, help="Number of worker processes for training.")
-    parser.add_argument("--batch", type=int, default=4, help="Batch size for training.")
-    parser.add_argument("--validation_image", type=str, help="Path to the validation image for object detection.")
-    parser.add_argument("--output_directory", type=str, default="output", help="Directory to save the trained model and results.")
+                        help="Device for training (e.g., 'cuda', 'cpu', 'mps', 'edge').")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Number of worker processes for training.")
+    parser.add_argument("--batch", type=int, default=4,
+                        help="Batch size for training.")
+    parser.add_argument("--validation_image", type=str,
+                        help="Path to the validation image for object detection.")
+    parser.add_argument("--output_directory", type=str, default="output",
+                        help="Directory to save the trained model and results.")
+    parser.add_argument("--use_coral", action="store_true",
+                        help="Use Coral USB Accelerator for inference if available.")
 
     args = parser.parse_args()
+
+    if args.use_coral and utils.is_coral_available():
+        args.device = "edge"
 
     # Call the train_model function with the parsed arguments
     train_model(model_path=args.model_path, data=args.data, epochs=args.epochs, device=args.device,

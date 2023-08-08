@@ -47,6 +47,7 @@ python train.py --epochs 10 --device cuda --batch 8 --validation_image path/to/v
 - `--device`: Device for training (e.g., 'cuda', 'cpu', 'mps').
 - `--batch`: Batch size for training.
 - `--validation_image`: Path to a validation image for object detection during training.
+- `--use_coral`: Use Coral USB Accelerator for inference if available.
 
 ### Object Detection
 
@@ -60,6 +61,11 @@ python detect.py --source path/to/video.mp4 --weights path/to/weights.pt --conf 
 - `--conf`: Confidence threshold for object detection.
 - `--iou`: IOU (Intersection over Union) threshold for object detection.
 - `--show`: Show the video with bounding boxes around detected objects (True or False).
+- `--use_coral`: Use Coral USB Accelerator for inference if available.
+- `--device`: Device for inference (e.g., 'cuda', 'cpu', 'mps', 'edge').
+
+Remember that the accuracy and performance of the system heavily depend on the quality of your dataset and the configuration settings in `default-config.yaml`. Ensure the configuration accurately reflects your dataset structure and class labels for successful training and accurate object detection.
+
 
 ## Configuration
 
