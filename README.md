@@ -11,6 +11,7 @@ Welcome to the Intelligent Parking Management System repository! This repository
   - [Training](#training)
   - [Object Detection](#object-detection)
 - [Configuration](#configuration)
+- [Data annotating (Bonus)](#data-annotating-bonus)
 
 ## Getting Started
 
