@@ -78,8 +78,6 @@ tenacity==8.2.2
 tensorboard==2.13.0
 tensorboard-data-server==0.7.1
 tensorflow==2.13.0
-tensorflow-estimator==2.13.0
-tensorflow-macos==2.13.0
 termcolor==2.3.0
 tiktoken==0.4.0
 toml==0.10.2
