@@ -28,6 +28,16 @@ git clone https://github.com/batiukmaks/Intelligent-Parking-Management-System.gi
 cd Intelligent-Parking-Management-System
 ```
 
+3. Create the virtual environment:
+```
+python -m venv venv
+```
+
+4. Activate virtual environment
+- On Linux/MacOS: ```source venv/bin/activate```
+- On Windows: ```venv\Scripts\activate.bat```
+
+
 2. Install the required dependencies:
 ```
 pip install -r requirements.txt
