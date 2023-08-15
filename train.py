@@ -1,23 +1,22 @@
 # Import required libraries
 import argparse
+import tensorflow as tf  # Import TensorFlow
 from ultralytics import YOLO
-
 import multiprocessing
 import utils
 
 
-def train_model(epochs, device, workers, batch,
-                validation_image, output_directory,
-                model_path='yolov8n.pt', data='default-config.yaml',):
+def train_model(epochs, device, workers, batch, validation_image, output_directory,
+                model_path='yolov8n.pt', data='default-config.yaml'):
     # Create a YOLO object and load the pre-trained model
     model = YOLO(model_path)
 
     # Set the device for better performance
     model.to(device)
 
-    # Train the model using the specified data configuration, for 3 epochs
+    # Train the model using the specified data configuration, for the specified number of epochs
     # Use images of size 640x640 for training
-    # Utilize the "mps" device for training, with 4 worker processes and a batch size of 4
+    # Utilize the device specified for training, with the specified worker processes and batch size
     model.train(data=data, epochs=epochs, imgsz=640, device=device, workers=workers, batch=batch,
                 project=output_directory, name="train", exist_ok=True)
 
@@ -61,10 +60,20 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    substituted_data = utils.substitute_env_variables(args.data)
+
     if args.use_coral and utils.is_coral_available():
         args.device = "edge"
+        # Load the EdgeTPU delegate
+        edgetpu_delegate = tf.lite.experimental.load_delegate('libedgetpu.so.1')
+        # Create the interpreter with EdgeTPU delegate
+        interpreter = tf.lite.Interpreter(model_path=args.model_path)
+        interpreter.add_delegate(edgetpu_delegate)
 
     # Call the train_model function with the parsed arguments
-    train_model(model_path=args.model_path, data=args.data, epochs=args.epochs, device=args.device,
+    train_model(model_path=args.model_path, data=substituted_data, epochs=args.epochs, device=args.device,
                 workers=args.workers, batch=args.batch, validation_image=args.validation_image,
                 output_directory=args.output_directory)
+
+    if args.device == "edge":
+        interpreter.remove_delegate()

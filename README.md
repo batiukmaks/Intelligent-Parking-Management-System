@@ -38,12 +38,20 @@ pip install -r requirements.txt
 Before you begin using the Intelligent Parking Management System, make sure to configure the `default-config.yaml` file to match your dataset and requirements. This configuration file contains essential paths and class information necessary for training and object detection.
 
 ### Training
+Before training, you have to configure the environment and the [config file](#configuration) if you want to use your own data. 
+
+In console, use the following command:
+```
+export ROOT_DIRECTORY=$(pwd) 
+```
 
 To train the YOLO model, use the following command, adjusting parameters as needed:
 ```
 python train.py --epochs 10 --device cuda --batch 8 --validation_image path/to/validation/image.jpg
 ```
 
+- `--model_path`: Path to the pre-trained model.
+- `--data`: Data configuration for training.
 - `--epochs`: Number of epochs for training.
 - `--device`: Device for training (e.g., 'cuda', 'cpu', 'mps').
 - `--batch`: Batch size for training.
@@ -74,6 +82,7 @@ The `default-config.yaml` file is a YAML configuration file that plays a crucial
 
 Here's a breakdown of the key elements within the configuration file:
 
+_!!! Note, that all the paths have to be absolute._
 - `path`: This is the base path to the directory where your dataset is located. It is used as a reference point for other dataset-related paths.
 
 - `train`, `test`, `val`: These are subdirectories under the `path` that respectively contain training, testing, and validation data. These paths help the system locate and organize the dataset for different phases of the workflow.
