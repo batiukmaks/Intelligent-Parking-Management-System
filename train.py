@@ -4,6 +4,10 @@ import tensorflow as tf  # Import TensorFlow
 from ultralytics import YOLO
 import multiprocessing
 import utils
+import torch
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 def train_model(epochs, device, workers, batch, validation_image, output_directory,
