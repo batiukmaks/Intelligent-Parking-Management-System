@@ -1,5 +1,4 @@
 import platform
-import torch
 import os
 import string
 
@@ -19,6 +18,7 @@ def get_default_device():
         return "mps"
 
     # For non-Windows and non-M1 Mac systems, use "cuda" if available, otherwise use "cpu"
+    import torch
     return "cuda" if torch.cuda.is_available() else "cpu"
 
 # Added function to check for Coral USB Accelerator

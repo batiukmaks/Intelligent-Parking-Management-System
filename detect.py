@@ -1,6 +1,7 @@
 import argparse
 from ultralytics import YOLO
 import utils
+import torch
 
 def perform_object_detection(source, weights, device, conf=0.3, iou=0.5, show=True):
     # Create a YOLO object and load the pre-trained model from the specified path
