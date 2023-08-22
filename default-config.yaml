@@ -8,10 +8,10 @@ nc: 8
 
 #classes names
 names: [
+  "barrier up",
+  "barrier down",
   "car parked",
   "car out",
-  "barrier down",
-  "barrier up",
   "parking lot occupied",
   "car in",
   "special car",
