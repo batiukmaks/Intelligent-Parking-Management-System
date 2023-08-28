@@ -1,10 +1,10 @@
 # Import required libraries
 import argparse
-import tensorflow as tf  # Import TensorFlow
 from ultralytics import YOLO
 import multiprocessing
 import utils
 import torch
+import tensorflow as tf
 
 
 import os
