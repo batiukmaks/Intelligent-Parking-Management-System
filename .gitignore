@@ -2,5 +2,7 @@
 venv/
 output/
 videos/
+__pycache__/
 yolov8n.pt
 labels.cache
+.DS_Store
