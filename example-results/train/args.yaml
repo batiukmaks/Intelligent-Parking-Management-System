@@ -1,8 +1,8 @@
 task: detect
 mode: train
 model: yolov8n.pt
-data: default-config.yaml
-epochs: 3
+data: default-config_substituted.yaml
+epochs: 10
 patience: 50
 batch: 4
 imgsz: 640
@@ -11,7 +11,7 @@ save_period: -1
 cache: false
 device: mps
 workers: 4
-project: example-results
+project: output
 name: train
 exist_ok: true
 pretrained: true
@@ -93,4 +93,4 @@ mixup: 0.0
 copy_paste: 0.0
 cfg: null
 tracker: botsort.yaml
-save_dir: example-results/train
+save_dir: output/train

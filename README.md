@@ -57,7 +57,7 @@ export ROOT_DIRECTORY=$(pwd)
 
 To train the YOLO model, use the following command, adjusting parameters as needed:
 ```
-python train.py --epochs 10 --device cuda --batch 8 --validation_image path/to/validation/image.jpg
+python train.py --epochs 10
 ```
 
 - `--model_path`: Path to the pre-trained model.
@@ -72,19 +72,14 @@ python train.py --epochs 10 --device cuda --batch 8 --validation_image path/to/v
 
 For object detection on videos, use the following command, adjusting parameters as needed:
 ```
-python detect.py --source path/to/video.mp4 --weights path/to/weights.pt --conf 0.5 --iou 0.5
+python detect.py --source path/to/video.mp4 --weights path/to/weights.pt
 ```
 
 - `--source`: Path to the video for object detection.
 - `--weights`: Path to the YOLO pre-trained model weights.
-- `--conf`: Confidence threshold for object detection.
-- `--iou`: IOU (Intersection over Union) threshold for object detection.
-- `--show`: Show the video with bounding boxes around detected objects (True or False).
-- `--use_coral`: Use Coral USB Accelerator for inference if available.
-- `--device`: Device for inference (e.g., 'cuda', 'cpu', 'mps', 'edge').
 
 Remember that the accuracy and performance of the system heavily depend on the quality of your dataset and the configuration settings in `default-config.yaml`. Ensure the configuration accurately reflects your dataset structure and class labels for successful training and accurate object detection.
-
+> To quit, press `q` when the video window is in focus..
 
 ## Configuration
 

@@ -1,0 +1,8 @@
+car parked
+car out
+barrier down
+barrier up
+parking lot occupied
+car in
+special car
+parking lot free
