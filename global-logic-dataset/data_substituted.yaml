@@ -1,0 +1,6 @@
+train: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/global-logic-dataset/train
+val: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/global-logic-dataset/valid
+test: /Users/batiukmaks/PycharmProjects/Intelligent-Parking-Management-System/global-logic-dataset/test
+
+nc: 3
+names: ['car in', 'car out', 'car parked']
